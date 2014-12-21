@@ -53,38 +53,35 @@
 
     <div class="container">
       <div class="question-content">
-        <div class="panel-group" id="accordion">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <button type="button" class="btn btn-info btn-lg" data-toggle="collapse" data-parent="#accordion" data-target="#panel1">
-                登録する
-              </button>
-            </div>
-            <div id="panel1" class="panel-collapse collapse in">
-              <div class="panel-body">
-                <p>お知らせ機能の登録のみ行う。登録をすると定期的な検診日などをお知らせします。</p>
-                <form role="form1">
-                  <div class="form-group">
-                    <label for="mailaddr">メールアドレス</label>
-                    <input type="email" class="form-control" id="mailaddr" placeholder="taro@xxxx.mail.com">
-                  </div>
-                  <div class="form-group apple-no-balloon" title="アップル番号は出生の際に割り当てられる番号です">
-                    <label for="apple-no">アップル番号</label>
-                    <input type="text" class="form-control" id="apple-no" placeholder="アップル番号を入力してください">
-                  </div>
-                  <div class="form-group">
-                    <label for="tel-no">電話番号</label>
-                    <input type="tel" class="form-control" id="tel-no" placeholder="電話番号を入力してください">
-                  </div>
-                  <div class="form-group">
-                    <label for="birthday">お子様の生年月日</label>
-                    <input type="date" class="form-control" id="birthday">
-                  </div>
-                  <div class="form-group">
-                    <label for="fetus-week">在胎週数</label>
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#tab1" data-toggle="tab">登録する</a></li>
+          <li><a href="#tab2" data-toggle="tab">質問する</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane fade in active" id="tab1">
+            <div class="row">
+              <p>お知らせ機能の登録のみ行う。登録をすると定期的な検診日などをお知らせします。</p>
+              <form role="form1">
+                <div class="form-group col-xs-12 col-md-4">
+                  <label for="mailaddr">メールアドレス</label>
+                  <input type="email" class="form-control" id="mailaddr" placeholder="taro@xxxx.mail.com">
+                </div>
+                <div class="form-group apple-no-balloon col-xs-12 col-md-4" title="アップル番号は出生の際に割り当てられる番号です">
+                  <label for="apple-no">アップル番号</label>
+                  <input type="text" class="form-control" id="apple-no" placeholder="アップル番号を入力してください">
+                </div>
+                <div class="form-group col-xs-12 col-md-4">
+                  <label for="tel-no">電話番号</label>
+                  <input type="tel" class="form-control" id="tel-no" placeholder="電話番号を入力してください">
+                </div>
+                <div class="form-group col-xs-12 col-md-4">
+                  <label for="birthday">お子様の生年月日</label>
+                  <input type="date" class="form-control" id="birthday" placeholder="年/月/日">
+                </div>
+                <div class="form-group col-xs-12 col-md-4">
+                  <label for="fetus-week">在胎週数</label>
+                  <div class="form-inline"> 
                     <select class="form-control" id="fetus-week">
-                      <option>20週</option>
-                      <option>21週</option>
                       <option>22週</option>
                       <option>23週</option>
                       <option>24週</option>
@@ -99,71 +96,77 @@
                       <option>33週</option>
                       <option>34週</option>
                       <option>35週</option>
+                      <option>36週</option>
+                      <option>37週</option>
+                      <option>38週</option>
+                      <option>39週</option>
+                      <option>40週</option>
+                      <option>41週</option>
+                      <option>42週</option>
+                    </select>
+                    <select class="form-control" id="fetus-day">
+                      <option>0日</option>
+                      <option>1日</option>
+                      <option>2日</option>
+                      <option>3日</option>
+                      <option>4日</option>
+                      <option>5日</option>
+                      <option>6日</option>
                     </select>
                   </div>
-                  <div class="form-group">
-                    <label for="birthweight">出生体重</label>
-                    <select class="form-control" id="birthweight">
-                      <option>～400g</option>
-                      <option>400g～499g</option>
-                      <option>500g～599g</option>
-                      <option>600g～699g</option>
-                      <option>700g～799g</option>
-                      <option>800g～899g</option>
-                      <option>900g～999g</option>
-                      <option>1000g～1099g</option>
-                      <option>1100g～1199g</option>
-                      <option>1200g～1299g</option>
-                      <option>1300g～1399g</option>
-                      <option>1400g～1499g</option>
-                      <option>1500g～1599g</option>
-                      <option>1600g～1699g</option>
-                      <option>1700g～1799g</option>
-                      <option>1800g～1899g</option>
-                    </select>
+                </div>
+                <div class="form-group col-xs-12 col-md-4">
+                  <label for="birthweight">出生体重（単位：ｇ）</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" id="birthweight" placeholder="出生体重（単位：ｇ）を入力してください">
+                    <span class="input-group-addon">g</span>
                   </div>
-                  <div class="form-group">
-                    <button type="submit" class="btn btn-primary">登録情報を送信</button>
+                </div>
+                <div class="form-group col-xs-12 col-md-12">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" checked id="remember-input">入力した情報を次回は省略する
+                    </label>
                   </div>
-                </form>
-              </div>
+                </div>
+                <div class="form-group col-xs-12 col-md-12">
+                  <button type="submit" class="btn btn-primary">登録情報を送信</button>
+                </div>
+              </form>
             </div>
           </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <button type="button" class="btn btn-info btn-lg" data-toggle="collapse" data-parent="#accordion" data-target="#panel2">
-                質問する
-              </button>
-            </div>
-            <div id="panel2" class="panel-collapse collapse">
-              <div class="panel-body">
-                <p>
-                極低出生体重児のお子さんに関する悩みをご相談していただけるメールフォームです。
-                日常の業務の間での作業となりますので、頂いたお悩みやご質問に全てお答えすることは出来ないかもしれませんし、急性期等の疾病に対してのお答えはできませんのでご了承下さい。
-                事前によくある質問やコミュニティー掲示板もご参考いただけると幸いです。
-                </p>
-                <form role="form2">
-                  <div class="form-group">
-                    <label for="mailaddr">メールアドレス</label>
-                    <input type="email" class="form-control" id="mailaddr" placeholder="taro@xxxx.mail.com">
-                  </div>
-                  <div class="form-group apple-no-balloon" title="アップル番号は出生の際に割り当てられる番号です">
-                    <label for="apple-no">アップル番号</label>
-                    <input type="text" class="form-control" id="apple-no" placeholder="アップル番号を入力してください">
-                  </div>
-                  <div class="form-group">
-                    <label for="tel-no">電話番号</label>
-                    <input type="tel" class="form-control" id="tel-no" placeholder="電話番号を入力してください">
-                  </div>
-                  <div class="form-group">
-                    <label for="birthday">お子様の生年月日</label>
-                    <input type="date" class="form-control" id="birthday">
-                  </div>
-                  <div class="form-group">
-                    <label for="fetus-week">在胎週数</label>
+          <div class="tab-pane fade" id="tab2">
+            <div class="row">
+              <p>
+              極低出生体重児のお子さんに関する悩みをご相談していただけるメールフォームです。
+              日常の業務の間での作業となりますので、頂いたお悩みやご質問に全てお答えすることは出来ないかもしれませんし、急性期等の疾病に対してのお答えはできませんのでご了承下さい。
+              事前によくある質問やコミュニティー掲示板もご参考いただけると幸いです。
+              </p>
+              <form role="form2">
+                <div class="form-group col-xs-12">
+                  <label for="memo">質問</label>
+                  <textarea class="form-control" id="memo" rows="5" placeholder="質問を入力してください"></textarea>
+                </div>
+                <div class="form-group col-xs-12 col-md-4">
+                  <label for="mailaddr">メールアドレス</label>
+                  <input type="email" class="form-control" id="mailaddr" placeholder="taro@xxxx.mail.com">
+                </div>
+                <div class="form-group apple-no-balloon col-xs-12 col-md-4" title="アップル番号は出生の際に割り当てられる番号です">
+                  <label for="apple-no">アップル番号</label>
+                  <input type="text" class="form-control" id="apple-no" placeholder="アップル番号を入力してください">
+                </div>
+                <div class="form-group col-xs-12 col-md-4">
+                  <label for="tel-no">電話番号</label>
+                  <input type="tel" class="form-control" id="tel-no" placeholder="電話番号を入力してください">
+                </div>
+                <div class="form-group col-xs-12 col-md-4">
+                  <label for="birthday">お子様の生年月日</label>
+                  <input type="date" class="form-control" id="birthday" placeholder="年/月/日">
+                </div>
+                <div class="form-group col-xs-12 col-md-4">
+                  <label for="fetus-week">在胎週数</label>
+                  <div class="form-inline"> 
                     <select class="form-control" id="fetus-week">
-                      <option>20週</option>
-                      <option>21週</option>
                       <option>22週</option>
                       <option>23週</option>
                       <option>24週</option>
@@ -178,117 +181,50 @@
                       <option>33週</option>
                       <option>34週</option>
                       <option>35週</option>
+                      <option>36週</option>
+                      <option>37週</option>
+                      <option>38週</option>
+                      <option>39週</option>
+                      <option>40週</option>
+                      <option>41週</option>
+                      <option>42週</option>
+                    </select>
+                    <select class="form-control" id="fetus-day">
+                      <option>0日</option>
+                      <option>1日</option>
+                      <option>2日</option>
+                      <option>3日</option>
+                      <option>4日</option>
+                      <option>5日</option>
+                      <option>6日</option>
                     </select>
                   </div>
-                  <div class="form-group">
-                    <label for="birthweight">出生体重</label>
-                    <select class="form-control" id="birthweight">
-                      <option>～400g</option>
-                      <option>400g～499g</option>
-                      <option>500g～599g</option>
-                      <option>600g～699g</option>
-                      <option>700g～799g</option>
-                      <option>800g～899g</option>
-                      <option>900g～999g</option>
-                      <option>1000g～1099g</option>
-                      <option>1100g～1199g</option>
-                      <option>1200g～1299g</option>
-                      <option>1300g～1399g</option>
-                      <option>1400g～1499g</option>
-                      <option>1500g～1599g</option>
-                      <option>1600g～1699g</option>
-                      <option>1700g～1799g</option>
-                      <option>1800g～1899g</option>
-                    </select>
+                </div>
+                <div class="form-group col-xs-12 col-md-4">
+                  <label for="birthweight">出生体重（単位：ｇ）</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" id="birthweight" placeholder="出生体重（単位：ｇ）を入力してください">
+                    <span class="input-group-addon">g</span>
                   </div>
-                  <div class="form-group">
-                    <label for="memo">質問</label>
-                    <textarea class="form-control" id="memo" rows="10" placeholder="質問を入力してください"></textarea>
+                </div>
+                <div class="form-group col-xs-12 col-md-12">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" checked id="remember-input">入力した情報を次回は省略する
+                    </label>
                   </div>
-                  <div class="form-group">
-                   <button type="submit" class="btn btn-primary">質問を送信</button>
+                </div>
+                <div class="form-group col-xs-12 col-md-12">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" checked id="register-reminder">お知らせメールの登録も同時に行います
+                    </label>
                   </div>
-                </form>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <button type="button" class="btn btn-info btn-lg" data-toggle="collapse" data-parent="#accordion" data-target="#panel3">
-                登録と質問をする
-              </button>
-            </div>
-            <div id="panel3" class="panel-collapse collapse">
-              <div class="panel-body">
-                <p>質問だけを行うことができます</p>
-                <form role="form3">
-                  <div class="form-group">
-                    <label for="mailaddr">メールアドレス</label>
-                    <input type="email" class="form-control" id="mailaddr" placeholder="taro@xxxx.mail.com">
-                  </div>
-                  <div class="form-group apple-no-balloon" title="アップル番号は出生の際に割り当てられる番号です">
-                    <label for="apple-no">アップル番号</label>
-                    <input type="text" class="form-control" id="apple-no" placeholder="アップル番号を入力してください">
-                  </div>
-                  <div class="form-group">
-                    <label for="tel-no">電話番号</label>
-                    <input type="tel" class="form-control" id="tel-no" placeholder="電話番号を入力してください">
-                  </div>
-                  <div class="form-group">
-                    <label for="birthday">お子様の生年月日</label>
-                    <input type="date" class="form-control" id="birthday">
-                  </div>
-                  <div class="form-group">
-                    <label for="fetus-week">在胎週数</label>
-                    <select class="form-control" id="fetus-week">
-                      <option>20週</option>
-                      <option>21週</option>
-                      <option>22週</option>
-                      <option>23週</option>
-                      <option>24週</option>
-                      <option>25週</option>
-                      <option>26週</option>
-                      <option>27週</option>
-                      <option>28週</option>
-                      <option>29週</option>
-                      <option>30週</option>
-                      <option>31週</option>
-                      <option>32週</option>
-                      <option>33週</option>
-                      <option>34週</option>
-                      <option>35週</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="birthweight">出生体重</label>
-                    <select class="form-control" id="birthweight">
-                      <option>～400g</option>
-                      <option>400g～499g</option>
-                      <option>500g～599g</option>
-                      <option>600g～699g</option>
-                      <option>700g～799g</option>
-                      <option>800g～899g</option>
-                      <option>900g～999g</option>
-                      <option>1000g～1099g</option>
-                      <option>1100g～1199g</option>
-                      <option>1200g～1299g</option>
-                      <option>1300g～1399g</option>
-                      <option>1400g～1499g</option>
-                      <option>1500g～1599g</option>
-                      <option>1600g～1699g</option>
-                      <option>1700g～1799g</option>
-                      <option>1800g～1899g</option>
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    <label for="memo">質問</label>
-                    <textarea class="form-control" id="memo" rows="10" placeholder="質問を入力してください"></textarea>
-                  </div>
-                  <div class="form-group">
-                    <button type="submit" class="btn btn-primary">登録情報と質問を送信</button>
-                  </div>
-                </form>
-              </div>
+                </div>
+                <div class="form-group col-xs-12 col-md-12">
+                  <button type="submit" class="btn btn-primary">質問を送信</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
